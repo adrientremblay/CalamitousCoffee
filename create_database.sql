@@ -23,7 +23,7 @@ CREATE table customer_table(id int, first_name varchar(255), last_name varchar(2
 
 -- Populating customers table
 INSERT into customer_table values (1, "michael", "shillyshally", "calgary", 20, "jester");
-INSERT into customer_table values (2, "hugh", "mungus", "calgary", 49, "mastadon");
-INSERT into customer_table values (3, "ragnar", "ragnarson", "calgary", 300, "viking");
-INSERT into customer_table values (4, "bill", "bill", "calgary", 34, "killer");
-INSERT into customer_table values (5, "bob", "nightblood", "calgary", 109, "death");
+INSERT into customer_table values (2, "hugh", "mungus", "montreal", 49, "mastadon");
+INSERT into customer_table values (3, "ragnar", "ragnarson", "montreal", 300, "viking");
+INSERT into customer_table values (4, "bill", "bill", "vancouver", 34, "killer");
+INSERT into customer_table values (5, "bob", "nightblood", "ottawa", 109, "death");
