@@ -12,3 +12,6 @@ SQL for educational purposes
 
 ### Run the database creation script
 `source create_database.sql;`
+
+### Run the query script
+`source queries_database.sql;`
