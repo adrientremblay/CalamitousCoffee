@@ -17,6 +17,3 @@ INSERT into coffee_table values (3, "5 hour energy shot", "compton", "light");
 INSERT into coffee_table values (4, "toxic espresso", "okinawa", "medium");
 INSERT into coffee_table values (5, "vodka", "st. petersburg", "light");
 INSERT into coffee_table values (6, "liquid caffeine", "oblivion", "heavy");
-
--- Querying everything from the coffee table
-SELECT * FROM coffee_table;
