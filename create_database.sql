@@ -10,8 +10,13 @@ use calamitous_coffee;
 -- Creating a table for coffee
 CREATE table coffee_table(id int, name varchar(255), region varchar(255), roast varchar(255));
 
--- Inserting a record into the coffee table
+-- Filling up the coffee table
 INSERT into coffee_table values (1, "brown water", "montreal", "medium");
+INSERT into coffee_table values (2, "pumpkin spice latte", "lost angeles", "light");
+INSERT into coffee_table values (3, "5 hour energy shot", "compton", "light");
+INSERT into coffee_table values (4, "toxic espresso", "okinawa", "medium");
+INSERT into coffee_table values (5, "vodka", "st. petersburg", "light");
+INSERT into coffee_table values (6, "liquid caffeine", "oblivion", "heavy");
 
 -- Querying everything from the coffee table
 SELECT * FROM coffee_table;
