@@ -37,7 +37,7 @@ CREATE TABLE customer_table(
 INSERT INTO customer_table VALUES (1, "michael", "shillyshally", "calgary", 20, "jester");
 INSERT INTO customer_table VALUES (2, "hugh", "mungus", "montreal", 49, "mastadon");
 INSERT INTO customer_table VALUES (3, "ragnar", "ragnarson", "montreal", 300, "viking");
-INSERT INTO customer_table VALUES (4, "bill", "bill", "vancouver", 34, "killer");
+INSERT INTO customer_table VALUES (4, "bill", "stupid", "vancouver", 34, "killer");
 INSERT INTO customer_table VALUES (5, "bob", "nightblood", "ottawa", 109, "death");
 
 -- Creating a table for orders
@@ -48,14 +48,14 @@ CREATE TABLE order_table(
     FOREIGN KEY (coffee_id) REFERENCES coffee_table(id),
     customer_id INT,
     FOREIGN KEY (customer_id) REFERENCES coffee_table(id),
-    MILK VARCHAR(255)
+    milk VARCHAR(255)
 );
 
 -- Populating order table
 INSERT INTO order_table VALUES (1, 2, "soy");
 INSERT INTO order_table VALUES (2, 1, "almond");
 INSERT INTO order_table VALUES (3, 5, "oat");
-INSERT INTO order_table VALUES (4, 6, "oat");
+INSERT INTO order_table VALUES (6, 4, "oat");
 
 -- Delete all calgary customers
 --DELETE from customer_table where origin = "calgary";
@@ -79,10 +79,7 @@ SELECT * FROM customer_table WHERE origin = "calgary" OR origin = "vancouver";
 SELECT * FROM customer_table WHERE age < 50;
 
 -- Query customers not from calgary
-SELECT * FROM customer_table WHERE NOT origin = "calgary"
-
--- Query customers not from calgary
-SELECT * FROM customer_table WHERE NOT origin = "calgary"
+SELECT * FROM customer_table WHERE NOT origin = "calgary";
 
 -- Query customer names who have ordered oat milk coffees
-SELECT name FROM customer_table WHERE NOT origin = "calgary"
+SELECT customer_table.first_name, customer_table.last_name FROM customer_table, order_table WHERE customer_table.id=order_table.customer_id AND order_table.milk="oat";
