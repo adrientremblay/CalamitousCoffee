@@ -7,6 +7,8 @@ CREATE database calamitous_coffee;
 -- Activate the database
 use calamitous_coffee;
 
+-- =============================================TABLE=CREATION===============================================
+
 -- Creating a table for coffee
 CREATE TABLE coffee_table(
     id INT PRIMARY KEY,
@@ -63,6 +65,8 @@ INSERT INTO order_table VALUES (6, 4, "oat");
 -- Update customer
 --UPDATE customer_table set last_name = "smith" where first_name = "bob";
 
+-- ===============================================QUERIES=================================================
+
 -- Querying everything from the coffee table
 SELECT * FROM coffee_table;
 
@@ -83,3 +87,9 @@ SELECT * FROM customer_table WHERE NOT origin = "calgary";
 
 -- Query customer names who have ordered oat milk coffees
 SELECT customer_table.first_name, customer_table.last_name FROM customer_table, order_table WHERE customer_table.id=order_table.customer_id AND order_table.milk="oat";
+
+-- ===============================================ALTERING================================================
+
+ALTER TABLE customer_table ADD COLUMN vegan BOOLEAN DEFAULT (true);
+
+SELECT * FROM customer_table;
