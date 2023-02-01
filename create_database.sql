@@ -8,22 +8,34 @@ CREATE database calamitous_coffee;
 use calamitous_coffee;
 
 -- Creating a table for coffee
-CREATE table coffee_table(id int, name varchar(255), region varchar(255), roast varchar(255));
+CREATE TABLE coffee_table(
+    id INT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    region VARCHAR(255) NOT NULL,
+    roast VARCHAR(255) NOT NULL
+);
 
 -- Filling up the coffee table
-INSERT into coffee_table values (1, "brown water", "montreal", "medium");
-INSERT into coffee_table values (2, "pumpkin spice latte", "lost angeles", "light");
-INSERT into coffee_table values (3, "5 hour energy shot", "compton", "light");
-INSERT into coffee_table values (4, "toxic espresso", "okinawa", "medium");
-INSERT into coffee_table values (5, "vodka", "st. petersburg", "light");
-INSERT into coffee_table values (6, "liquid caffeine", "oblivion", "heavy");
+INSERT INTO coffee_table VALUES (1, "brown water", "montreal", "medium");
+INSERT INTO coffee_table VALUES (2, "pumpkin spice latte", "lost angeles", "light");
+INSERT INTO coffee_table VALUES (3, "5 hour energy shot", "compton", "light");
+INSERT INTO coffee_table VALUES (4, "toxic espresso", "okinawa", "medium");
+INSERT INTO coffee_table VALUES (5, "vodka", "st. petersburg", "light");
+INSERT INTO coffee_table VALUES (6, "liquid caffeine", "oblivion", "heavy");
 
 -- Creating a table for customers
-CREATE table customer_table(id int, first_name varchar(255), last_name varchar(255), origin varchar(255), age int, alias varchar(255));
+CREATE TABLE customer_table(
+    id int PRIMARY KEY,
+    first_name varchar(255) NOT NULL,
+    last_name varchar(255) NOT NULL,
+    origin varchar(255) NOT NULL,
+    age int NOT NULL,
+    alias varchar(255) NOT NULL
+);
 
 -- Populating customers table
-INSERT into customer_table values (1, "michael", "shillyshally", "calgary", 20, "jester");
-INSERT into customer_table values (2, "hugh", "mungus", "montreal", 49, "mastadon");
-INSERT into customer_table values (3, "ragnar", "ragnarson", "montreal", 300, "viking");
-INSERT into customer_table values (4, "bill", "bill", "vancouver", 34, "killer");
-INSERT into customer_table values (5, "bob", "nightblood", "ottawa", 109, "death");
+INSERT INTO customer_table VALUES (1, "michael", "shillyshally", "calgary", 20, "jester");
+INSERT INTO customer_table VALUES (2, "hugh", "mungus", "montreal", 49, "mastadon");
+INSERT INTO customer_table VALUES (3, "ragnar", "ragnarson", "montreal", 300, "viking");
+INSERT INTO customer_table VALUES (4, "bill", "bill", "vancouver", 34, "killer");
+INSERT INTO customer_table VALUES (5, "bob", "nightblood", "ottawa", 109, "death");
