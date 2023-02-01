@@ -90,6 +90,18 @@ SELECT customer_table.first_name, customer_table.last_name FROM customer_table, 
 
 -- ===============================================ALTERING================================================
 
-ALTER TABLE customer_table ADD COLUMN vegan BOOLEAN DEFAULT (true);
+ALTER TABLE customer_table ADD COLUMN vegan BOOLEAN DEFAULT (false);
 
 SELECT * FROM customer_table;
+
+-- ==================================================UPDATES==============================================
+
+UPDATE customer_table SET vegan=true WHERE id=1 OR id=2;
+
+SELECT * FROM customer_table WHERE vegan=true;
+
+-- ==================================================VIEWS================================================
+
+CREATE VIEW vegan_view(first_name, last_name) AS SELECT customer_table.first_name, customer_table.last_name FROM customer_table WHERE vegan=true;
+
+SELECT * FROM vegan_view;
